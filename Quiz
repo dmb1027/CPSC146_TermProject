@@ -1,0 +1,2 @@
+#include <iostream>, <cstring>, <cstdblib>, <ctime>
+using namespace std
