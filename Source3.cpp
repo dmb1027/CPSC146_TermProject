@@ -73,7 +73,7 @@ int main()
 		 cout << "yes\n";
 		 }
 		 else if (flag == true) {
-		 cout << "no\n";
+		 done = 1;
 		 }
 
 
