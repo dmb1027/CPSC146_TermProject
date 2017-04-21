@@ -89,7 +89,7 @@ since 2008, DVD has out sold video games#FALSE#
 HTC's dream was the first Android phone#TRUE#
 the first ever cell phone weighed about 2 lbs#TRUE#
 The first electronic computer ENIAC weighed more than 27 tons and took up 1800 square feet#TRUE#
-90\% of the world’s currency is physical money.  The other 10% is on computers#FALSE# 
+90\% of the worldâ€™s currency is physical money.  The other 10% is on computers#FALSE# 
 \"Typewriter\" is the longest word that you can write using the letters only on one row of a keyboard#TRUE#
 The first computer mouse was made of wood#TRUE# 
 There are less than 5000 new computer viruses released every month#FALSE#
