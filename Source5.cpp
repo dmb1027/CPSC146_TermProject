@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <ctime>
 #include <string>
 #include <cstdlib>
@@ -18,7 +18,33 @@ bool Validate_ID(int ID) {
 		return false;
 }
 
-bool Unique_Question(int questionNumber) {
+bool Unique_Question(int questionNumber, int inputVal, int savedQ[20]) {
+
+
+	savedQ[questionNumber];
+	for (int i = 0; i < inputVal; i++) {
+		if (savedQ[i] == questionNumber) {
+			return false;
+		}
+		else if (savedQ[i] != questionNumber) {
+			return true;
+		}
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+int main()
+{
 	string Q[100] = { "In computing, keyboards are used as input devices.",
 		"Operating systems are software systems that help make it more convenient to use computers and to manage the transitions between multiple jobs.",
 		"C++ is a superset of C; it \"spruces up\" the C language and provides capabilities for object oriented programming.",
@@ -110,39 +136,15 @@ bool Unique_Question(int questionNumber) {
 		"HTC's dream was the first Android phone",
 		"the first ever cell phone weighed about 2 lbs",
 		"The first electronic computer ENIAC weighed more than 27 tons and took up 1800 square feet",
-		"90\% of the world�s currency is physical money.  The other 10% is on computers",
+		"90% of the world?s currency is physical money.  The other 10% is on computers",
 		"\"Typewriter\" is the longest word that you can write using the letters only on one row of a keyboard",
 		"The first computer mouse was made of wood",
 		"There are less than 5000 new computer viruses released every month",
-		"50\% of Wikipedia vandalism is caught by a group of computer programs with more than 90% accuracy",
+		"50% of Wikipedia vandalism is caught by a group of computer programs with more than 90% accuracy",
 		"If a computer was as powerful as a human brain, it would be able to execute 38,000-trillion operations a second",
 		"The password for nuclear missiles of the US was 00000000 for 8 years",
-		"70\% of virus writers are said to work under contract for the CIA",
+		"70% of virus writers are said to work under contract for the CIA",
 		"ASCII values are a series of 8 numbers between 1-3" };
-
-	int random_x;
-	questionNumber = random_x;
-	Q[questionNumber];
-
-	if () {
-		return true;
-	}
-	else if() {
-		return false;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-int main()
-{
 
 	string fname = "";
 	string lname = "";
@@ -165,7 +167,7 @@ int main()
 		cout << "Enter your 6 digit ID\n";
 		cin >> ID;
 		bool validid = Validate_ID(ID);
-	
+
 
 		while (validid != true) {
 			if (x > 1) {
@@ -183,7 +185,7 @@ int main()
 		}
 		if (flag == false) {
 			double weight = 0; //the weight of each problem.
-			int inputVal = 0; //For the user to choose either 10 or 20 question.
+			int inputVal = 5; //For the user to choose either 10 or 20 question.
 			while (inputVal != 20 && inputVal != 10) {
 				cout << "Enter 10 for 10 questions or 20 for 20 questions.\n";
 				cin >> inputVal;
@@ -196,37 +198,53 @@ int main()
 			}
 			int questionNumber;
 			int m = 0;
-			string Q[100];
-			srand(time(0));
+			int savedQ[100];
+			string savedA[100];
 			while (m < inputVal) {
+				srand(time(0));
 				int random_x = rand() % 101;
-				Unique_Question(questionNumber);
-
-				if (bool Unique_Question = true) {
+				questionNumber = random_x;
+				Unique_Question(questionNumber, inputVal, savedQ);
+				string Q;
+				if (Unique_Question(questionNumber, inputVal, savedQ) == true) {
 					cout << Q[questionNumber];
-					string questionAns = " ";
+					savedQ[questionNumber] = Q[questionNumber];
+					string questionAns;
+					questionAns = " ";
 					cin >> questionAns;
-					questionAns = to_upper(questionAns);
-					while (questionAns != "TRUE" || questionAns != "FALSE") {
-						if (questionAns == "T") {
-							"TRUE" = "T";
+					while (questionAns != "T" || questionAns != "F") {
+						if (questionAns == "TRUE") {
+							questionAns = "T";
 						}
-						else if (questionAns == "F") {
-							"FALSE" = "F";
+						else if (questionAns == "FALSE") {
+							questionAns = "F";
+
+						}
+						else if (questionAns == "true" || questionAns == "false") {
+							if (questionAns == "true") {
+								questionAns = "T";
+							}
+							else if (questionAns == "false") {
+								questionAns = "F";
+							}
+						}
+						else if (questionAns == "t" || questionAns == "f") {
+							if (questionAns == "t") {
+								questionAns = "T";
+							}
+							else if (questionAns == "f") {
+								questionAns = "F";
+							}
 						}
 						else if (questionAns != "F" || questionAns != "T") {
 							cout << "Please re-enter your answer with either true or false.\n";
 							cin >> questionAns;
 						}
 					}
-					int questionS[questionNumber];
-					questionS[questionNumber] = questionAns;
+					savedA[questionNumber] = questionAns;
 					m++;
 				}
 
-				//print out there answers and the correct answer
-				//print out the time it took
-				//print out their score
 
 
 
@@ -234,35 +252,45 @@ int main()
 
 
 			}
-		}
-
-		else if (flag == true) {
-			done = 1;
-		}
+			//print out there answers and the correct answer
+			//print out the time it took
+			//print out their score
 
 
-		if (flag == false) {
-			cout << "Enter s to retake the quiz or press q to quit.\n";
-			cin >> quiz;
 
 
-			while (quiz != "s" && quiz != "q") {
 
-				cout << "Enter s to retake the quiz or press q to quit.\n";
-				cin >> quiz;
-			}
 
-			if (quiz == "q") {
+
+
+			if (flag == true) {
 				done = 1;
 			}
+
+
+			if (flag == false) {
+				cout << "Enter s to retake the quiz or press q to quit.\n";
+				cin >> quiz;
+
+
+				while (quiz != "s" && quiz != "q") {
+
+					cout << "Enter s to retake the quiz or press q to quit.\n";
+					cin >> quiz;
+				}
+
+				if (quiz == "q") {
+					done = 1;
+				}
+			}
+
+
+
+
 		}
-		
-	}
-
-
-
-		
 		cout << "\nProgram Ended\n";
-		system("pause");
+		int z;
+		cin >> z;
 		return 0;
 	}
+}
